@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>giphy</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="giphy-header">
+        <div class="giphy-container">
+            <h1 class="giphy-title">Trendy GIFs</h1>
+            <div class="giphy-header-menu">
+                <ul class="giphy-ul">
+                    <li class="li">Docs</li>
+                    <li class="li">FAQ</li>
+                    <li class="li">API Explorer</li>
+                    <li class="li">Blog</li>
+                    <li><button class="gipphy-app">Create an App</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="https://media.giphy.com/headers/2022-03-02-03-1646240638/UKRAINE_BANNER_HP.gif" alt="">
+
+    <div class="giphy-search">
+        <input class="search-in" type="text" placeholder="Search">
+        <button onclick="searchButton()" class="search-btn">searsh</button>
+    </div>
+    <div class="giphy-content">
+
+    </div>
+    <a href="Vector (3).png" download="title">dow</a>
+
+    <!-- <script src="./main.js"></script> -->
+    <script>
+        const apiKye = 'fymnh9sh36Kf77i6UVfc9osJH3pjED1d';
+        const getGiphy = async (url) => {
+            const res = await fetch(`https://api.giphy.com/v1/gifs/${url}`)
+            return await res.json()
+        }
+        const getData = async () => {
+            const a  = await getGiphy(`trending?api_key=${apiKye}&limit=20`)
+                
+        }
+        let content = document.getElementsByClassName('giphy-content')[0]
+        const searchButton = async () => {
+            console.log(1)
+            const a = await getGiphy(`search?api_key=${apiKye}&q=cat&limit=15`).then(data => {
+                console.log(data)
+                const elems = data.data;
+                elems.map(item => {
+                    return content.innerHTML += `
+            <div class='giphy-items'>
+                <iframe src='${item.embed_url}' frameborder="0"></iframe>
+            <a href=${item.embed_url} download >Dowloand</a>
+            </div>`
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>

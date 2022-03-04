@@ -1,0 +1,107 @@
+html{
+    color: white;
+    font-family: cursive;
+}
+body{
+    background: rgb(8, 8, 8);
+    margin: 0;
+    padding: 0;
+}
+.giphy-header{
+    margin-top: 5px;
+    width: 100%;
+    background: linear-gradient(-10deg, rgb(252, 82, 229),rgb(252, 140, 233), rgb(253, 4, 220));
+}
+.giphy-container{
+    width: 90%; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.giphy-title{
+    animation: anim 2s infinite ease;
+    transition: 0.3s;
+}
+@keyframes anim{
+    0%, 100%{transform:skew(-20deg);}
+    50%{transform:skew(20deg);}
+}
+.giphy-ul > li{
+    float: left;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+li:hover, h1:hover{
+    text-shadow: 0 0 5px rgb(93, 248, 240);
+}
+
+.li{
+    margin: 20px;
+}
+.gipphy-app, .search-btn{
+    color: rgb(247, 242, 245);
+    text-shadow: 0 0 3px rgb(143, 11, 143);
+    font-family: cursive;
+    outline: none;
+    background: linear-gradient(-30deg, rgb(252, 107, 232), rgba(248, 245, 248, 0.87), rgb(228, 118, 219));
+    border: 2px solid white;
+    transition: 0.3s;
+}
+.gipphy-app:hover, .search-btn:hover{
+    background: linear-gradient(-30deg, rgb(228, 64, 243), rgb(231, 191, 235), rgb(216, 144, 206));
+    box-shadow: 0 0 5px rgb(230, 93, 248);
+    text-shadow: 0 0 5px purple;
+}
+
+.giphy-items{
+    width: 100%;
+    height: 30vh;
+    background: rgb(70, 14, 56);
+    position: relative;
+}
+.giphy-items  iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.dowloand{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 0, 212, 0.473);
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+.giphy-content{
+    width: 90%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px ;
+}
+.giphy-search{
+    width: 90%;
+    margin: 10px auto;
+}
+.search-in{
+    width: 300px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    font-family: cursive;
+    transition: 0.3s;
+}
+.dowloand:hover,.search-in:hover, .search-btn:hover{
+    box-shadow: 0 0 5px 2px  rgb(253, 135, 253);
+}
+.search-btn{
+    padding: 5px ;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-shadow: 0 0 3px rgb(143, 11, 143);
+    font-family: cursive;
+}
